@@ -16,6 +16,7 @@ jobs:
       - run:
           name: "semantic versioning"
           command: |
+            npx install
             npx semantic-release --debug --no-ci
 
 
