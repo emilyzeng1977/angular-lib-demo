@@ -1,0 +1,26 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+
+jobs:
+  generateAppVersion:
+    docker:
+      - image: cimg/node:14.17.0
+    working_directory: ~/repo
+    resource_class: xlarge
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - checkout
+      - run:
+          name: "semantic versioning"
+          command: |
+            npx semantic-release --debug --no-ci
+
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - generateAppVersion
