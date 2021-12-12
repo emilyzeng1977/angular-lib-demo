@@ -61,7 +61,6 @@
       [
         "@semantic-release/github",
         {
-          "assets": "dist/*.tgz",
           "successComment": false,
           "failComment": false,
           "failTitle": false,
