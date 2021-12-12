@@ -24,3 +24,5 @@ workflows:
   build-deploy:
     jobs:
       - generateAppVersion
+          only:
+            - master
