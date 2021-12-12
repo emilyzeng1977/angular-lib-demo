@@ -16,7 +16,7 @@ jobs:
       - run:
           name: "semantic versioning"
           command: |
-            npm semantic-release --debug --no-ci
+            npx semantic-release --debug --no-ci
 
 
 workflows:
